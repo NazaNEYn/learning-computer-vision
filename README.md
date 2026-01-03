@@ -25,3 +25,24 @@ CV_Roadmap/
   ```
 
 * Install `OpenCV`
+
+* Anaconda <br>
+  To see a list of all of your environments:
+  ```python
+  conda env list
+  ```
+
+  Create a new Conda environment:
+  ```python
+  conda create -n opencv python=3.10
+  ```
+
+  Activate the environment:
+  ```python
+  conda activate opencv
+  ```
+
+  Install OpenCV from conda-forge:
+  ```python
+  conda install -c conda-forge opencv
+  ```
