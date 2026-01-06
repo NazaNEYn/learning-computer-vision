@@ -44,3 +44,18 @@ plt.axis("off")
 ```
 `cv2.imread()`loads the data into an array with BGR.<br>
 `plt.imshow()` *expects* the array in RGB and that's why we need to convert the image.
+
+# 4. Print Image Shape (Core Concept)
+```python
+print("Image shape:", image.shape)
+```
+
+Output:
+```python
+Image shape: (480, 640, 3)
+```
+```
+Height = 480 pixels
+Width  = 640 pixels
+Channels = 3 (color)
+```
