@@ -43,7 +43,21 @@ plt.imshow(image_rgb)
 plt.axis("off")
 ```
 `cv2.imread()`loads the data into an array with BGR.<br>
-`plt.imshow()` *expects* the array in RGB and that's why we need to convert the image.
+`plt.imshow()` *expects* the array in RGB and that's why we need to convert the image.<br>
+<br>
+
+You convert **only** when:<br>
+* Using matplotlib.pyplot.imshow()
+* Using libraries that expect RGB
+
+You do **NOT** convert when:<br>
+* Using OpenCV functions
+* Doing CV processing
+* Using `cv2.imshow()` (desktop)
+* Applying filters, edges, detection, etc.
+
+In real CV pipelines:<br>
+| You usually stay in BGR.
 
 # 4. Print Image Shape (Core Concept)
 ```python
