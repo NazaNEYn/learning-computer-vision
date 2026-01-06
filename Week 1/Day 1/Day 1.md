@@ -110,3 +110,18 @@ So:
 ```python
 image[row, column]
 ```
+
+
+Center pixel:
+```python
+h, w, c = image.shape
+print("Center pixel:", image[h//2, w//2])
+```
+
+This means:<br>
+
+* Go halfway down the image
+* Go halfway across the image
+* Print the pixel there
+
+`//` means integer division — required for array indexing.
