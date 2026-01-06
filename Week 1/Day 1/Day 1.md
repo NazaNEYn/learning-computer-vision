@@ -61,7 +61,7 @@ In real CV pipelines:<br>
 
 # 4. Print Image Shape (Core Concept)
 ```python
-print("Image shape:", image.shape)
+print("Image shape:", image_rgb.shape)
 ```
 
 Output:
@@ -72,4 +72,41 @@ Image shape: (480, 640, 3)
 Height = 480 pixels
 Width  = 640 pixels
 Channels = 3 (color)
+```
+
+# 5. Explore Pixel Values
+
+what is a pixel?
+A pixel is NOT a color dot.<br>
+It's a small list of numbers.<br>
+
+For a color image:
+```python
+Pixel = [Blue, Green, Red]   (in OpenCV)
+```
+
+Each number:<br>
+
+* is an intensity
+* ranges from 0 to 255
+* bigger number = stronger color
+
+Top-left pixel:
+```python
+print(image[0, 0])
+```
+
+Output:
+```python
+[14 14 12]
+```
+
+What does [0,0] mean?<br>
+
+* First `0` → row (height / y)
+* Second `0` → column (width / x)
+
+So:
+```python
+image[row, column]
 ```
