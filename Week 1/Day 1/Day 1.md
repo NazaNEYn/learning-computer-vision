@@ -122,6 +122,38 @@ This means:<br>
 
 * Go halfway down the image
 * Go halfway across the image
-* Print the pixel there
+* Print the color value for the pixel there
+
+# 6. Modify Pixels
+
+**Change a single pixel**:
+```python
+image[0,0] = [0, 0, 255]  # red (BGR)
+
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+plt.imshow(image_rgb)
+plt.axis("off")
+```
+this just changes a pixel and that is not something that can be seen with eyes. That's why we change it by blocks/regions.
+
+**Draw a square**:
+```python
+image[0:100, 0:100] = [255, 0, 0]  # blue square
+
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+plt.imshow(image_rgb)
+plt.axis("off")
+```
+
+# 7. Check Data Type
+```python
+print(image.dtype)
+```
+
+Output:
+```python
+uint8
+```
+Meaning: pixel values are `0–255`.
 
 `//` means integer division — required for array indexing.
