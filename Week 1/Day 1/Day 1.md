@@ -118,6 +118,8 @@ h, w, c = image.shape
 print("Center pixel:", image[h//2, w//2])
 ```
 
+`//` means integer division — required for array indexing.
+
 This means:<br>
 
 * Go halfway down the image
@@ -156,4 +158,3 @@ uint8
 ```
 Meaning: pixel values are `0–255`.
 
-`//` means integer division — required for array indexing.
