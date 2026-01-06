@@ -42,3 +42,5 @@ image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 plt.imshow(image_rgb)
 plt.axis("off")
 ```
+`cv2.imread()`loads the data into an array with BGR.<br>
+`plt.imshow()` *expects* the array in RGB and that's why we need to convert the image.
