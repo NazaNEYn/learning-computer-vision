@@ -130,6 +130,7 @@ cropped = image[
     w//4 : 3*w//4
 ]
 ```
+
 This takes the **center region**.
 
 ## Cropping is NOT copying
