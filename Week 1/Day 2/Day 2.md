@@ -115,3 +115,26 @@ Resized: (300, 300)
 * ML models expect fixed input size
 * Faster computation
 * Consistent processing
+
+# 3. Crop Images
+Mathematically:
+````python
+cropped = image[y1:y2, x1:x2]
+```
+example:
+```python
+h, w, _ = image.shape
+
+cropped = image[
+    h//4 : 3*h//4,
+    w//4 : 3*w//4
+]
+```
+This takes the **center region**.
+
+## Cropping is NOT copying
+Important concept:
+
+* Cropping uses array slicing
+* No pixels are modified
+* Just selecting a view
