@@ -117,11 +117,15 @@ Resized: (300, 300)
 * Consistent processing
 
 # 3. Crop Images
+
 Mathematically:
-````python
+
+```python
 cropped = image[y1:y2, x1:x2]
 ```
+
 example:
+
 ```python
 h, w, _ = image.shape
 
@@ -130,6 +134,7 @@ cropped = image[
     w//4 : 3*w//4
 ]
 ```
+
 
 This takes the **center region**.
 
