@@ -73,3 +73,45 @@ Output:
 ```python
 128
 ```
+
+# 2. Resize Images
+
+## What does resizing really mean?
+
+Resizing: <br>
+* Changes image dimensions
+* Changes number of pixels
+* Interpolates values
+
+Example:
+```python
+640×480 → 320×240
+```
+Now you have:
+* 4× fewer pixels
+* Same visual content
+
+## Resize
+```python
+resized = cv2.resize(image, (300, 300))
+```
+Order:
+```python
+(width, height)
+```
+
+## Compare shapes
+```python
+print("Original:", image.shape)
+print("Resized:", resized.shape)
+```
+```python
+Original: (700, 961)
+Resized: (300, 300)
+```
+
+## Why resizing is essential in CV
+
+* ML models expect fixed input size
+* Faster computation
+* Consistent processing
