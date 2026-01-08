@@ -206,9 +206,8 @@ You don’t guess numbers, you use *proportions*.<br>
 
 ## What proportions mean
 
-A proportion is:
-> “A fraction of
->
+Proportion mean:
+> “How much of the image?”
 
 Examples:
 * 1/4 of height
@@ -220,3 +219,15 @@ Instead of saying:
 
 You say:
 > “Crop from 25% down the image”
+
+## Why proportions matter in CV
+
+In real CV:
+*Images come in different sizes
+* Cameras have different resolutions
+* Models expect consistency
+
+Using proportions means:
+* Your code works on any image
+* You don’t hardcode values
+* Your CV pipeline is robust
