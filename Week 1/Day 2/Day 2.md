@@ -147,3 +147,33 @@ So:
 image[y, x]
 ```
 *Note:* This is the opposite of math graphs.
+
+## Cropping = NumPy slicing
+```python
+cropped = image[y1:y2, x1:x2]
+```
+
+Meaning:
+
+* Rows from y1 to y2 | `(y = y2 - y1)`
+* Columns from x1 to x2 | `(x = x2 - x1)`
+
+Channels stay the same automatically.
+
+Example:
+```python
+image.shape = (400, 600, 3)
+```
+
+```python
+cropped = image[100:300, 200:400]
+```
+
+This gives:
+```python
+cropped.shape = (200, 200, 3)
+
+# y = 300 - 100 = 200
+# x = 400 - 200 = 200
+```
+
