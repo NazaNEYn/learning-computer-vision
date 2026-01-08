@@ -103,5 +103,5 @@ You are just saying:
 * Quarter → divide by 4
 * Middle → skip edges
 
-**3. Step 3: Write it using `h` and `w`**
+**3. Step 3: Write it using `h` and `w`**<br>
 No guessing numbers. Ever.
