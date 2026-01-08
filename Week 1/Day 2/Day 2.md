@@ -176,4 +176,47 @@ cropped.shape = (200, 200, 3)
 # y = 300 - 100 = 200
 # x = 400 - 200 = 200
 ```
+## How to think about cropping correctly
 
+Think like this:
+
+> “From which row to which row?”
+> “From which column to which column?”
+
+Not:
+
+> “x and y coordinates”
+
+## Center crop
+
+```python
+h, w, _ = image.shape
+
+y1 = h // 4
+y2 = 3 * h // 4
+
+x1 = w // 4
+x2 = 3 * w // 4
+
+cropped = image[y1:y2, x1:x2]
+```
+You don’t guess numbers, you use *proportions*.<br>
+> `_` means: “I don’t care about this value right now.”
+> `//` is integer division (floor division). It rounds down to the nearest integer/float floor.
+
+## What proportions mean
+
+A proportion is:
+> “A fraction of
+>
+
+Examples:
+* 1/4 of height
+* 1/2 of width
+* 10% of image
+
+Instead of saying:
+> “Crop from pixel 120”
+
+You say:
+> “Crop from 25% down the image”
