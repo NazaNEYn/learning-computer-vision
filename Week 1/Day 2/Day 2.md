@@ -231,3 +231,16 @@ Using proportions means:
 * Your code works on any image
 * You don’t hardcode values
 * Your CV pipeline is robust
+
+## Cropping grayscale images
+
+Grayscale shape:
+```python
+(h, w)
+```
+
+Cropping stays the same:
+```python
+gray_crop = gray[y1:y2, x1:x2]
+```
+No channels to worry about.
