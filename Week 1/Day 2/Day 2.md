@@ -118,3 +118,32 @@ Resized: (300, 300)
 
 # 3. Crop Images
 
+## What cropping REALLY is
+Cropping means:<br>
+> Selecting a rectangular region from an image
+
+You are NOT:
+
+* Changing pixel values
+* Editing colors
+* Creating new data
+
+You ARE:
+* Choosing which pixels to keep
+
+## Images are grids
+
+```python
+image.shape = (H, W, C)
+```
+
+Think of an image as a grid:
+
+* Rows → top to bottom (y)
+* Columns → left to right (x)
+
+So:
+```python
+image[y, x]
+```
+*Note:* This is the opposite of math graphs.
