@@ -210,3 +210,4 @@ Don’t think “math”. Think:
      ↑         ↑
    start     end
 ```
+You are drawing a box inside the image.
