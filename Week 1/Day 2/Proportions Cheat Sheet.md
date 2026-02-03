@@ -92,7 +92,7 @@ You are just saying:
 
 ---
 
-## How to THINK in Proportions (No Memorization)
+# How to THINK in Proportions (No Memorization)
 
 ### First: drop the word “math” for a moment
 Proportions are not formulas. They are **relationships**.
@@ -211,3 +211,31 @@ Don’t think “math”. Think:
    start     end
 ```
 You are drawing a box inside the image.
+
+
+
+## One powerful mental exercise (do this mentally)
+
+Imagine the image as 100 units tall.
+Ask:
+
+* **Where would the middle be?** → around 50
+* **Where does “near top” feel like?** → around 10–20
+* **Where does “near bottom” feel like?** → around 80–90
+
+That’s proportions.
+
+Then translate:
+* 10% → $h * 0.1$
+* 50% → $h * 0.5$
+* 80% → $h * 0.8$
+
+
+
+### Final sentence (read this twice)
+
+**Proportions are about WHERE, not HOW MUCH math.**
+
+If that sentence makes sense, you’re already thinking correctly.
+
+
