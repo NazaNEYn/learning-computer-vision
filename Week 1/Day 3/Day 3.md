@@ -93,3 +93,18 @@ cv2.rectangle(
 ```
 
 This draws a **center box** on *any image size*.
+
+## Why this creates a perfect center:
+Because you are starting at $1/4$ and ending at $3/4$, the "gap" on every side of the rectangle is exactly $1/4$ of the image.
+
+
+| Boundary | Calculation | Position |
+| :--- | :--- | :--- |
+| Left Gap | 0 to 1/4 | 25% of width |
+| Right Gap | 3/4 to w | 25% of width |
+| Top Gap | 0 to 1/4 | 25% of height |
+| Bottom Gap | 3/4 to h | 25% of height |
+
+**The Math Rule**:<br>
+* `w // 4` is the same as saying **"25% of the width."**
+* `3 * w // 4` is the same as saying **"75% of the width."**
