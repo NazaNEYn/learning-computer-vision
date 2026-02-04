@@ -92,6 +92,12 @@ You are just saying:
 
 ---
 
+
+![Gemini_Generated_Image_kwd2g8kwd2g8kwd2](https://github.com/user-attachments/assets/6b59d2fa-24e1-498c-bd18-7ca3861d87a5)
+
+---
+
+
 # How to THINK in Proportions (No Memorization)
 
 ### First: drop the word “math” for a moment
