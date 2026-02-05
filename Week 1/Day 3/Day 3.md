@@ -79,6 +79,10 @@ cv2.circle(img, (250,250), 60, (0,255,0), -1)
 
 # Using proportions with drawing
 ![Gemini_Generated_Image_kwd2g8kwd2g8kwd2](https://github.com/user-attachments/assets/fb571f7a-31dd-4fac-ab25-666782e7b53f)
+![Gemini_Generated_Image_yrolpcyrolpcyrol](https://github.com/user-attachments/assets/4b47f429-5b26-4218-89c9-97971a5d3afa)
+![Gemini_Generated_Image_hrru4ghrru4ghrru](https://github.com/user-attachments/assets/4d3879aa-bb02-4bcf-97d9-049fb61fd300)
+
+
 
 ```python
 h, w = image.shape[:2]
