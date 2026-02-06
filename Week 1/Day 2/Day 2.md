@@ -1,3 +1,9 @@
+# DAY 2 — Grayscale, Resize & Crop (Computer Vision Basics)
+
+---
+---
+
+
 # What you need to know TODAY
 
 * Grayscale = 1 number per pixel
