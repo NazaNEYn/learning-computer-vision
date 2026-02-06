@@ -53,6 +53,10 @@ plt.axis("off")
 ### Visual intuition (IMPORTANT)
 
 * **Bright areas** = strong color presence
+* <img width="741" height="445" alt="(255, 0, 0)" src="https://github.com/user-attachments/assets/00e908b6-9018-4d3c-b781-d85c6cb47d2f" />
+
 * **Dark areas** = weak color presence
+* <img width="744" height="449" alt="(100, 0, 0)" src="https://github.com/user-attachments/assets/c2846f54-f1dd-4860-897b-5ae4eb0f8c63" />
+
 
 You’re literally seeing how much of that color exists per pixel.
