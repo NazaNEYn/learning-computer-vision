@@ -110,6 +110,8 @@ Because you are starting at $1/4$ and ending at $3/4$, the "gap" on every side o
 * `w // 4` is the same as saying **"25% of the width."**
 * `3 * w // 4` is the same as saying **"75% of the width."**
 
+> (Target Slice $\times$ Dimension) // Total Slices
+
 
 ![Gemini_Generated_Image_kwd2g8kwd2g8kwd2](https://github.com/user-attachments/assets/fb571f7a-31dd-4fac-ab25-666782e7b53f)
 ![Gemini_Generated_Image_yrolpcyrolpcyrol](https://github.com/user-attachments/assets/4b47f429-5b26-4218-89c9-97971a5d3afa)
