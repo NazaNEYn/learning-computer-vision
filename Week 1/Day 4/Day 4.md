@@ -63,3 +63,38 @@ plt.axis("off")
 
 
 You’re literally seeing how much of that color exists per pixel.
+
+## PART 3 — Re-merging channels
+
+Re-merging channels simply means:
+
+> Putting separate color channels back together to form a color image
+
+```python
+merged = cv2.merge([b, g, r])
+```
+
+Channels can be:
+* reordered
+* modified
+* removed
+
+### Why channels get split in the first place
+
+You split channels when you want to:
+
+* Look at them individually
+* Modify one color
+* Remove a color
+* Analyze intensity patterns
+
+But after tha:<br>
+you usually want a normal color image again.<br>
+
+That’s re-merging.
+
+### How it looks in code (minimal)
+```python
+b, g, r = cv2.split(image)
+merged = cv2.merge([b, g, r])
+```
