@@ -78,9 +78,6 @@ cv2.circle(img, (250,250), 60, (0,255,0), -1)
 ```
 
 # Using proportions with drawing
-![Gemini_Generated_Image_kwd2g8kwd2g8kwd2](https://github.com/user-attachments/assets/fb571f7a-31dd-4fac-ab25-666782e7b53f)
-![Gemini_Generated_Image_yrolpcyrolpcyrol](https://github.com/user-attachments/assets/4b47f429-5b26-4218-89c9-97971a5d3afa)
-![Gemini_Generated_Image_hrru4ghrru4ghrru](https://github.com/user-attachments/assets/4d3879aa-bb02-4bcf-97d9-049fb61fd300)
 
 
 
@@ -112,3 +109,9 @@ Because you are starting at $1/4$ and ending at $3/4$, the "gap" on every side o
 **The Math Rule**:<br>
 * `w // 4` is the same as saying **"25% of the width."**
 * `3 * w // 4` is the same as saying **"75% of the width."**
+
+
+![Gemini_Generated_Image_kwd2g8kwd2g8kwd2](https://github.com/user-attachments/assets/fb571f7a-31dd-4fac-ab25-666782e7b53f)
+![Gemini_Generated_Image_yrolpcyrolpcyrol](https://github.com/user-attachments/assets/4b47f429-5b26-4218-89c9-97971a5d3afa)
+![Gemini_Generated_Image_hrru4ghrru4ghrru](https://github.com/user-attachments/assets/4d3879aa-bb02-4bcf-97d9-049fb61fd300)
+![Gemini_Generated_Image_2v4xcn2v4xcn2v4x](https://github.com/user-attachments/assets/c3a4ce52-6e69-4c30-b018-b36ae115153d)
