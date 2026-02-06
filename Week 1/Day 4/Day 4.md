@@ -114,7 +114,11 @@ dark = cv2.subtract(image, 50)
 ```
 
 ## PART 5 — Contrast
-Contrast = stretch differences between pixels
+Contrast = stretch differences between pixels<br>
+Contrast = difference between dark and bright parts
+
+* **High contrast** → dark parts are very dark, bright parts are very bright
+* **Low contrast** → everything looks kind of gray and flat
 
 ```python
 new_pixel = alpha * old_pixel + beta
@@ -130,7 +134,6 @@ contrast = cv2.convertScaleAbs(image, alpha=1.5, beta=0)
 ```
 
 Try:
-
 * `alpha = 0.5` → flat image
 * `alpha = 2.0` → high contrast
 
@@ -146,8 +149,6 @@ CV loves contrast because:
 * objects stand out
 
 
-
-
 ### Brightness vs Contrast (important distinction)
 
 | Brightness | Contrast |
@@ -155,3 +156,37 @@ CV loves contrast because:
 | Moves everything up or down | Spreads things apart |
 | Makes image lighter/darker | Makes details pop |
 | Adds/subtracts values | Multiplies differences |
+
+
+### Visual mental model
+
+Imagine pixel values on a number line:<br>
+
+**Original**:
+```
+|----20----60----100----140----|
+```
+
+**Increase brightness**:
+```
+|----70----110----150----190----|
+```
+Same spacing → same contrast
+
+**Increase contrast**:
+```
+|--10------60------120------200--|
+```
+Spacing is bigger → higher contrast
+
+* **High Contrast**
+```python
+# Alpha > 1: High Contrast
+high_contrast = cv.convertScaleAbs(image_rgb, alpha=1.5, beta=0)
+```
+
+* **Low Contrast**
+```python
+# Alpha < 1: Low Contrast
+low_contrast = cv.convertScaleAbs(image_rgb, alpha=0.5, beta=0)
+```
