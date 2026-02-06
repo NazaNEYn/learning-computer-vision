@@ -190,3 +190,17 @@ high_contrast = cv.convertScaleAbs(image_rgb, alpha=1.5, beta=0)
 # Alpha < 1: Low Contrast
 low_contrast = cv.convertScaleAbs(image_rgb, alpha=0.5, beta=0)
 ```
+
+## PART 6 — Combining brightness & contrast
+
+```python
+adjusted = cv2.convertScaleAbs(image, alpha=1.3, beta=30)
+```
+
+## PART 7 — Using proportions with channels (advanced intuition)
+
+```python
+h, w = image.shape[:2]
+img = image.copy()
+img[0:h//2] = cv2.add(img[0:h//2], 30)
+```
