@@ -1,3 +1,7 @@
+# DAY 3 — Drawing on Images (Lines, Circles, Rectangles)
+
+---
+
 # PART 1 — Coordinates
 * When accessing pixels:
   ```
