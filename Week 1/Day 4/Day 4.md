@@ -98,3 +98,60 @@ That’s re-merging.
 b, g, r = cv2.split(image)
 merged = cv2.merge([b, g, r])
 ```
+Example:
+```python
+b, g, r = cv2.split(image)
+r = cv2.add(r, 50)
+merged = cv2.merge([b, g, r])
+```
+
+## PART 4 — Brightness
+Brightness = add or subtract pixel values
+
+```python
+bright = cv2.add(image, 50)
+dark = cv2.subtract(image, 50)
+```
+
+## PART 5 — Contrast
+Contrast = stretch differences between pixels
+
+```python
+new_pixel = alpha * old_pixel + beta
+```
+
+Where:
+
+* `alpha` → contrast (1.0 = same)
+* `beta` → brightness
+
+```python
+contrast = cv2.convertScaleAbs(image, alpha=1.5, beta=0)
+```
+
+Try:
+
+* `alpha = 0.5` → flat image
+* `alpha = 2.0` → high contrast
+
+
+Visual intuition:
+
+* Low contrast → gray, washed out
+* High contrast → sharp, punchy
+
+CV loves contrast because:
+
+* edges become clearer
+* objects stand out
+
+
+
+
+### Brightness vs Contrast (important distinction)
+
+| Brightness | Contrast |
+| :--- | :--- |
+| Moves everything up or down | Spreads things apart |
+| Makes image lighter/darker | Makes details pop |
+| Adds/subtracts values | Multiplies differences |
