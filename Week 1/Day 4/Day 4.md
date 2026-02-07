@@ -204,3 +204,31 @@ h, w = image.shape[:2]
 img = image.copy()
 img[0:h//2] = cv2.add(img[0:h//2], 30)
 ```
+
+---
+
+
+### Example of modifying an image
+
+**split → modify → re-merge**<br>
+
+Since `opencv` uses `bgr`, you either have to conver the image to `rgb` before spliting and work with `rgb`, or just work with `rgb` and convert the image when you are done modifying.
+
+```
+# 1. converting to rgb first
+image_rgb = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+
+# 2. splitting channels
+r,g,b = cv.split(image_rgb)
+
+# 3. modifying 
+r_contrast = cv.convertScaleAbs(r, alpha=1.2, beta=0)
+g_contrast = cv.convertScaleAbs(g, alpha=1.1, beta=0)
+b_contrast = cv.convertScaleAbs(b, alpha=.8, beta=0)
+
+# re-marging
+merged = cv.merge([r_contrast,g_contrast,b_contrast])
+
+plt.imshow(merged)
+plt.axis("off")
+```
