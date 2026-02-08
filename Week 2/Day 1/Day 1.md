@@ -77,7 +77,7 @@ Forget math. Here’s the idea:
 
 This removes noise but keeps structure.
 
-## Why “Gaussian”?
+### Why “Gaussian”?
 
 Because the averaging gives:
 
@@ -85,7 +85,19 @@ Because the averaging gives:
 * less weight to far ones
 
 
+## PART 4 — Applying Gaussian Blur
 
+Basic syntax:
+```python
+blur = cv2.GaussianBlur(image, (5, 5), 0)
+```
+
+What each part means:
+* `image`: input image
+* `(5,5)`: blur strength (kernel size)
+* `0`: auto-calculate sigma
+
+-----------------------------------------------------
 kernel:
 ![Gemini_Generated_Image_1ac99p1ac99p1ac9](https://github.com/user-attachments/assets/0aedaadf-d685-4f14-b05b-c4927f9fc380)
 
