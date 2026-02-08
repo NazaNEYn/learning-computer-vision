@@ -106,7 +106,7 @@ What each part means:
 
 A kernel is:
 
-> A small window that looks at a pixel and its neighbors
+> **A small window that looks at a pixel and its neighbors**
 
 Example:
 ```python
