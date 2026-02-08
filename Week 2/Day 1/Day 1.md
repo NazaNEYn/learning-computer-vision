@@ -92,14 +92,52 @@ Basic syntax:
 blur = cv2.GaussianBlur(image, (5, 5), 0)
 ```
 
+```python
+blur = cv2.GaussianBlur(input image, (kernel size), auto-calculate sigma)
+```
+
 What each part means:
 * `image`: input image
 * `(5,5)`: blur strength (kernel size)
 * `0`: auto-calculate sigma
 
------------------------------------------------------
+
+### Kernel
+
+A kernel is:
+
+> A small window that looks at a pixel and its neighbors
+
+Example:
+```python
+(5, 5)
+```
+
+Means:
+* look at a 5×5 square
+* centered on the current pixel
+
 kernel:
 ![Gemini_Generated_Image_1ac99p1ac99p1ac9](https://github.com/user-attachments/assets/0aedaadf-d685-4f14-b05b-c4927f9fc380)
+
+
+
+### Kernel size intuition (THIS matters)
+
+| Kernel | Effect |
+| :--- | :--- |
+| (3,3) | Very light blur |
+| (5,5) | Moderate blur |
+| (9,9) | Strong blur |
+| (15,15) | Very strong blur |
+
+
+
+
+
+
+
+-----------------------------------------------------
 
 
 <br> <br>
