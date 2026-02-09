@@ -92,3 +92,33 @@ Canny logic (simplified):
 | high (100, 250) | few edges, clean |
 
 No “correct” values — only useful ones.
+
+
+## PART 3 — Full pipeline
+
+```python
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+blur = cv2.GaussianBlur(gray, (5,5), 0)
+edges = cv2.Canny(blur, 50, 150)
+
+plt.imshow(edges, cmap="gray")
+plt.title("Canny Edges")
+plt.axis("off")
+```
+
+## PART 4 — How to read an edge image
+
+* White = edge detected
+* Black = no edge
+
+Good edge image:
+
+* clean outlines
+* minimal speckles
+* important shapes preserved
+
+Bad edge image:
+
+* snow-like noise
+* broken contours
+* missing object boundaries
