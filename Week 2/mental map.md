@@ -53,3 +53,5 @@ Original
 * **Edges:** “Show me structure.”
 
 ---
+
+Edges depend on contrast; blur controls noise; grayscale simplifies the problem; brightness is situational.
