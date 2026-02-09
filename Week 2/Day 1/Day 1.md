@@ -133,16 +133,39 @@ kernel:
 
 
 
-
-
-
-
------------------------------------------------------
-
-
-<br> <br>
-
 <img width="500" height="298" alt="0_YO8XSDvUu-wxgXl7" src="https://github.com/user-attachments/assets/bc0dd9ae-195e-437e-9941-3070ae7458ee" />
 <br>
 
 image credit: [https://muneebsa.medium.com/deep-learning-101-lesson-20-convolution-kernels-40641dda695d](https://muneebsa.medium.com/deep-learning-101-lesson-20-convolution-kernels-40641dda695d)
+
+
+## PART 6 — Blur + Grayscale (common pipeline)
+
+Most CV pipelines do this:
+```python
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+blur = cv2.GaussianBlur(gray, (5,5), 0)
+```
+
+Why?
+
+* simpler data
+* less noise
+* better edges
+
+## PART 7 — When SHOULD you blur?
+
+* Before edge detection
+* Before thresholding
+* Before contour detection
+* When noise hurts detection
+
+## PART 8 — When should you NOT blur?
+
+* When you need fine detail
+* When working with text
+* When blur removes important features
+
+
+**One sentence to remember forever**<br>
+> **Blur removes noise so real patterns stand out.**
