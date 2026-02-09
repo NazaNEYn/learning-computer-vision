@@ -122,3 +122,12 @@ Bad edge image:
 * snow-like noise
 * broken contours
 * missing object boundaries
+
+
+![Gemini_Generated_Image_moz9irmoz9irmoz9](https://github.com/user-attachments/assets/3360e130-5748-4600-9afd-107c914ff7b5)
+![Gemini_Generated_Image_s7lxpms7lxpms7lx](https://github.com/user-attachments/assets/860ce572-39a1-4684-a503-4b40ecdb5e62)
+![Gemini_Generated_Image_d0v9ud0v9ud0v9ud](https://github.com/user-attachments/assets/de978f87-db2a-4ffd-870b-116737108630)
+![Gemini_Generated_Image_24qabd24qabd24qa](https://github.com/user-attachments/assets/6527ca04-e5a8-410e-8e3b-6dd65d3b2a73)
+
+
+
