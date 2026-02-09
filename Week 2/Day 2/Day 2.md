@@ -82,3 +82,13 @@ Canny logic (simplified):
 * Strong edges → keep
 * Weak edges near strong → keep
 * Weak edges alone → discard
+
+### Threshold intuition
+
+| Values | Result |
+| :--- | :--- |
+| low (10, 30) | many edges, noisy |
+| medium (50, 150) | balanced |
+| high (100, 250) | few edges, clean |
+
+No “correct” values — only useful ones.
