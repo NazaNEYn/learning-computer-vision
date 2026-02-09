@@ -166,6 +166,7 @@ Why?
 * When working with text
 * When blur removes important features
 
+---
 
 **One sentence to remember forever**<br>
 > **Blur removes noise so real patterns stand out.**
