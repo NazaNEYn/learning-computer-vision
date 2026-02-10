@@ -56,3 +56,34 @@ Think:
 
 * **Edges** = “Where does it change?”
  **Threshold** = “Which pixels belong?”
+
+
+![Gemini_Generated_Image_32uf9y32uf9y32uf](https://github.com/user-attachments/assets/0c91c49d-c41a-470b-8029-33a3885f8a80)
+![Gemini_Generated_Image_57sqhb57sqhb57sq](https://github.com/user-attachments/assets/99f42aba-4efc-49e1-b6c9-4a0225708173)
+
+## The threshold syntax
+
+**The full thresholding syntax**:
+
+```python
+retval, binary = cv2.threshold(
+    src,          # input image (grayscale)
+    thresh,       # threshold value
+    maxval,       # value assigned if condition is met
+    type          # thresholding rule
+)
+```
+
+
+**The basic thresholding syntax**:
+
+```python
+_, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+```
+
+* `gray` = input image
+*  `127` = threshold value
+*  `255` = value for white
+*  `THRESH_BINARY` = rule type
+
+
