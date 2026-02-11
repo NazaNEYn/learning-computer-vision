@@ -49,3 +49,70 @@ color → gray
 ```
 
 Same start. Different goals.
+
+
+
+
+## Are edges and thresholding used together?
+
+* **Yes** — sometimes.
+* **No** — not always.
+
+They are not rivals and not replacements for each other.<br>
+They solve different problems.
+
+## What problem does EACH one solve?
+
+### Edge Detection
+
+**Answers:**
+
+* “Where does the image change sharply?”
+
+**Key Characteristics:**
+
+* Looks for intensity differences
+* Finds boundaries
+* Output = thin lines
+
+**Used for:**
+
+* Shapes
+* Outlines
+* Contours
+* Structure
+
+
+
+### Thresholding
+
+**Answers:**
+
+* “Is this pixel foreground or background?”
+
+**Key Characteristics:**
+
+* Looks at absolute intensity
+* Separates regions
+* Output = solid areas
+
+**Used for:**
+
+* Segmentation
+* Masks
+* Object extraction
+
+## Why we usually DON’T do this:
+```python
+edges → threshold ❌
+```
+
+Because:
+* edges are already near-binary
+* thresholding often deletes weak but important edges
+
+---
+
+* “Do I want **areas**?” → threshold
+* “Do I want **lines**?” → edges
+* “Do I want **both**?” → threshold first, edges second
