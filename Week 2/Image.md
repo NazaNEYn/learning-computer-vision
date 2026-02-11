@@ -45,6 +45,7 @@ This is purely for the computer.
 
 ![Gemini_Generated_Image_6uaaij6uaaij6uaa](https://github.com/user-attachments/assets/e9c89b3d-960f-420b-83e5-1169a814fa82)
 
+
 ## So where does `copy()` come in?
 
 * Q: Should I copy the original image or the gray image?
@@ -109,3 +110,17 @@ cv2.drawContours(img_copy, contours, -1, (0,255,0), 2)
 plt.imshow(img_copy)
 plt.axis("off")
 ```
+
+## Why we don’t draw on grayscale/binary (most of the time)
+
+Because:
+* drawing modifies pixel values
+* grayscale is meant for computation
+* binary is meant for logic
+* color is meant for interpretation
+
+Mixing these roles causes confusion.
+
+### One sentence that should fully unlock this
+
+We detect contours from processed images, but we draw them on images meant for humans.
