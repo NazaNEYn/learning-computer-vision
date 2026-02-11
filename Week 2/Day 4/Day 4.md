@@ -84,3 +84,54 @@ With `CHAIN_APPROX_SIMPLE`:
 * corners are preserved
 
 Same shape, fewer points.
+
+
+![Gemini_Generated_Image_lb35qrlb35qrlb35](https://github.com/user-attachments/assets/1ad39c82-5877-45fc-8a5f-3ce189826ca5)
+
+## What `contours` actually looks like
+
+```python
+print(len(contours))
+```
+Might output:
+```
+3
+```
+
+Meaning:
+* 3 objects detected
+
+Each contour:
+```python
+cnt = contours[0]
+```
+
+Is:
+* a NumPy array
+* of `(x, y)` coordinates
+* forming a closed loop
+
+**Each contour = one object**
+
+## Drawing contours
+
+Always copy the image
+```python
+img_copy = image.copy()
+```
+
+**Draw all contours**:
+```python
+cv2.drawContours(
+    img_copy,
+    contours,
+    -1,            # draw ALL contours
+    (0, 255, 0),   # green
+    2              # thickness
+)
+```
+
+Now you can **see**:
+* what objects were detected
+* what noise slipped in
+* whether thresholding worked
