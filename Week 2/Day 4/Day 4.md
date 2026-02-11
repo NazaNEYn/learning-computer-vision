@@ -134,4 +134,24 @@ cv2.drawContours(
 Now you can **see**:
 * what objects were detected
 * what noise slipped in
+
+## Pipeline
+```python
+Color image
+   ↓
+Grayscale
+   ↓
+Blur
+   ↓
+Threshold
+   ↓
+findContours()
+   ↓
+Draw (debug)
+   ↓
+Measure / Filter / Decide
+   ↓
+[Later] Adaptive Threshold
+
+```
 * whether thresholding worked
