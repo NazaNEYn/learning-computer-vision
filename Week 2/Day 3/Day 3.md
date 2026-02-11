@@ -174,4 +174,16 @@ This is why adaptive thresholding exists (next step).
 * **Thresholding** is region-based.
 * **Edges** are boundary-based.
 
+## Thresholding + blur
 
+```python
+blur = cv2.GaussianBlur(gray, (5,5), 0)
+_, binary = cv2.threshold(blur, 127, 255, cv2.THRESH_BINARY)
+```
+
+## One BIG misconception
+
+* **Incorrect:** “Thresholding finds objects”
+* **Correct:** “Thresholding separates pixels”
+
+**Note:** Objects come later (contours, connected components).
