@@ -86,4 +86,92 @@ _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
 *  `255` = value for white
 *  `THRESH_BINARY` = rule type
 
+## Threshold value intuition 
+
+* **Low threshold** → more white
+* **High threshold** → more black
+
+**Example:**
+
+* **threshold = 50** → almost everything white
+* **threshold = 200** → almost everything black
+
+## Common threshold types
+
+* 1. **Binary**:
+```python
+cv.THRESH_BINARY
+```
+Above threshold → white
+
+* 2. **Binary Inverse**:
+```python
+cv.THRESH_BINARY
+```
+Above threshold → black
+
+* 3.
+```python
+cv.THRESH_BINARY
+```
+(will learn this later)
+
+* 4.
+```python
+cv.THRESH_BINARY
+```
+(will learn this later)
+
+
+## Why grayscale is REQUIRED
+
+**Thresholding needs:**
+
+* One value per pixel
+
+**Color images:**
+
+* Have 3 values
+* Don’t threshold cleanly
+
+## When thresholding works well
+
+* High contrast images
+* Simple lighting
+* Clear foreground/background
+* Documents, text, silhouettes
+
+**Examples:**
+
+* Scanned papers
+* License plates
+* Coins on table
+* Black objects on white background
+
+## When thresholding FAILS (important)
+
+* Uneven lighting
+* Shadows
+* Low contrast
+* Complex backgrounds
+
+This is why adaptive thresholding exists (next step).
+
+
+
+## Where threshold fits conceptually
+
+**Threshold answers a different question:**
+
+* “Is this pixel foreground or background?”
+
+**Edges answer:**
+
+* “Does intensity change here?”
+
+**The Distinction:**
+
+* **Thresholding** is region-based.
+* **Edges** are boundary-based.
+
 
