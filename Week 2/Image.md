@@ -79,13 +79,23 @@ Why?
 So:
 > **Contours are computed from binary, but drawn on color.**
 
-## The correct flow (this is the full answer)
+## The correct flow 
 ```python
 Color image (for humans)
-      ↓ copy for drawing
+      ↓ (copy later for drawing)
 Grayscale image (for processing)
       ↓
-Binary image (for logic)
+Blur (noise reduction)
+      ↓
+┌───────────────┐
+│               │
+│   Threshold   │ → Binary image (regions)
+│               │
+│     OR        │
+│               │
+│     Edges     │ → Edge image (boundaries)
+│               │
+└───────────────┘
       ↓
 Contours (data)
       ↓
