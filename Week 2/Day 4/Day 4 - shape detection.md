@@ -21,6 +21,21 @@ It does this instead:
 From those answers → **decision**
 
 
+
+## Tools You Need (Small Set)
+
+You only need 5 things:
+
+| Tool | Purpose |
+| :--- | :--- |
+| **`cv2.findContours()`** | Find objects |
+| **`cv2.contourArea()`** | Ignore tiny junk |
+| **`cv2.boundingRect()`** | Draw a box |
+| **`cv2.approxPolyDP()`** | Count corners |
+| **`cv2.arcLength()`** | Shape perimeter |
+
+
+
 ## The Full Pipeline
 ```python
 Color image                ← humans
