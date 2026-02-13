@@ -391,6 +391,29 @@ epsilon = 0.04 * perimeter
 * Reduce noise
 
 
+### Example:
+```python
+# approx = cv.approxPolyPD(cnt, epsilone,True)
+# epsilon = 0.04 x perimeter
+# perimeter = cv.arcLength(cnt, True)
+
+for cnt in contours:
+
+    perimeter = cv.arcLength(cnt, True)
+    epsilon = 0.04 * perimeter
+    approx = cv.approxPolyDP(cnt, epsilon,True)
+
+    print("Number of points:", len(approx))
+```
+Result:
+```python
+# Number of points: 5
+# Number of points: 4
+# Number of points: 6
+# Number of points: 7
+# Number of points: 4
+```
+
 
 ## How They Connect
 
