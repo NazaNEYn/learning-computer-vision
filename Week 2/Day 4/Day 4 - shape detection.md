@@ -414,7 +414,6 @@ Result:
 # Number of points: 4
 ```
 
-
 ## How They Connect
 
 | Function | Role |
@@ -424,3 +423,13 @@ Result:
 | **`arcLength()`** | Measure shape |
 | **`approxPolyDP()`** | Understand shape |
 | **`boundingRect()`** | Locate & draw |
+
+## Summary
+
+| Tool | Question it answers |
+| :--- | :--- |
+| **findContours** | What objects exist? |
+| **contourArea** | Is this object important? |
+| **boundingRect** | Where is it? |
+| **arcLength** | How complex/large is it? |
+| **approxPolyDP** | What shape is it? |
