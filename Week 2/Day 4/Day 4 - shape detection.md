@@ -172,6 +172,41 @@ It takes a contour (that complex list of points) and simplifies it into a simple
 x, y, w, h = cv2.boundingRect(contour)
 ```
 
+**what `x, y, w, h` mean**:
+```python
+(x, y)  → top-left corner of the box
+w       → width  (how far to the right)
+h       → height (how far down)
+```
+
+So the rectangle goes from:
+```python
+(x, y) → (x + w, y + h)
+```
+
+
+**Example, Just draw a bounding box**:
+
+```python
+for cnt in contours:
+    area = cv.contourArea(cnt)
+    if area < 500:
+        continue
+
+    # FIX: Use 'cnt', not 'contours'
+    x, y, w, h = cv.boundingRect(cnt) 
+    
+    cv.rectangle(
+        output,
+        (x, y),
+        (x + w, y + h),
+        (0, 255, 0),
+        2
+    )
+```
+
+
+
 **Mental image**:
 ```python
    +--------+
@@ -187,6 +222,7 @@ Bounding box doesn’t care about shape — just size & position.<br>
 
 ![Gemini_Generated_Image_h1vofph1vofph1vo](https://github.com/user-attachments/assets/032162c3-e5cc-42de-8e68-b84576787ae6)
 
+![Gemini_Generated_Image_49hk4449hk4449hk](https://github.com/user-attachments/assets/037b18be-5c6c-4fbf-8348-98f0b59acc62)
 
 
 **Why it matters**:
