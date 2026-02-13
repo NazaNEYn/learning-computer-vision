@@ -372,6 +372,12 @@ Where:
 epsilon = 0.04 * perimeter
 ```
 
+```python
+epsilon = 0.01 * perimeter   # very detailed
+epsilon = 0.04 * perimeter   # common
+epsilon = 0.1  * perimeter   # very rough
+```
+
 **What you get**:
 * A simplified contour
 * Fewer points
@@ -412,6 +418,24 @@ Result:
 # Number of points: 6
 # Number of points: 7
 # Number of points: 4
+```
+
+```python
+for cnt in contours:
+    area = cv.contourArea(cnt)
+    if area < 500:
+        continue
+
+    # 1. Calculate the perimeter (arc length)
+    perimeter = cv.arcLength(cnt, True)
+
+    # 2. Approximate the shape
+    epsilon = 0.02 * perimeter
+    approx = cv.approxPolyDP(cnt, epsilon, True)
+
+    # 3. Draw the approximated contour
+    # We use [approx] because drawContours needs a LIST of shapes
+    cv.drawContours(output, [approx], -1, (0, 255, 0), 4)
 ```
 
 ## How They Connect
