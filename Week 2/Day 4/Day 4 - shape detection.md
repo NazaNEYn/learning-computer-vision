@@ -185,27 +185,6 @@ So the rectangle goes from:
 ```
 
 
-**Example, Just draw a bounding box**:
-
-```python
-for cnt in contours:
-    area = cv.contourArea(cnt)
-    if area < 500:
-        continue
-
-    # FIX: Use 'cnt', not 'contours'
-    x, y, w, h = cv.boundingRect(cnt) 
-    
-    cv.rectangle(
-        output,
-        (x, y),
-        (x + w, y + h),
-        (0, 255, 0),
-        2
-    )
-```
-
-
 
 **Mental image**:
 ```python
@@ -230,5 +209,64 @@ Bounding box doesn’t care about shape — just size & position.<br>
 * Crop them
 * Draw boxes
 * Measure proportions
+
+
+### Example, Just draw a bounding box
+
+```python
+for cnt in contours:
+    area = cv.contourArea(cnt)
+    if area < 500:
+        continue
+
+    # FIX: Use 'cnt', not 'contours'
+    x, y, w, h = cv.boundingRect(cnt) 
+    
+    cv.rectangle(
+        output,
+        (x, y),
+        (x + w, y + h),
+        (0, 255, 0),
+        2
+    )
+```
+
+```python
+image_path = "/kaggle/input/datasets/nazaninashrafi/img-testt/2224564.jpg"
+image = cv.imread(image_path)
+image_rgb = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+
+gray = cv.cvtColor(image_rgb, cv.COLOR_BGR2GRAY)
+blur = cv.GaussianBlur(gray, (9,9), 0)
+
+_, binary = cv.threshold(blur, 127, 255, cv.THRESH_BINARY_INV)
+
+contours, _ = cv.findContours(
+    binary,
+    cv.RETR_EXTERNAL,
+    cv.CHAIN_APPROX_SIMPLE
+)
+
+output = image_rgb.copy()
+
+
+for cnt in contours:
+    area = cv.contourArea(cnt)
+    if area < 500:
+        continue
+
+    x, y, w, h = cv.boundingRect(cnt)
+    
+    cv.rectangle(
+        output,
+        (x, y),
+        (x + w, y + h),
+        (0, 255, 0),
+        4
+    )
+
+plt.imshow(output)
+```
+<img width="720" height="352" alt="image" src="https://github.com/user-attachments/assets/1d7d0053-ff76-4943-8095-4738800ef2f0" />
 
 
