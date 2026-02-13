@@ -167,6 +167,7 @@ length: 34
 It takes a contour (that complex list of points) and simplifies it into a simple, straight rectangle
 
 **Syntax**:
+
 ```python
 x, y, w, h = cv2.boundingRect(contour)
 ```
@@ -180,3 +181,18 @@ x, y, w, h = cv2.boundingRect(contour)
 ```
 
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/58a566ee-733f-4bab-ad04-d318c44b59ab" />
+<br>
+
+Bounding box doesn’t care about shape — just size & position.<br>
+
+![Gemini_Generated_Image_h1vofph1vofph1vo](https://github.com/user-attachments/assets/032162c3-e5cc-42de-8e68-b84576787ae6)
+
+
+
+**Why it matters**:
+* Locate objects
+* Crop them
+* Draw boxes
+* Measure proportions
+
+
