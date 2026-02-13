@@ -97,3 +97,86 @@ Tells you **how big a contour** is (in pixels).
 ```python
 area = cv2.contourArea(contour)
 ```
+
+**What you get**
+* A single number
+* Roughly = number of pixels inside shape
+
+
+Example:
+```python
+for cnt in contours:
+    area = cv.contourArea(cnt)
+    print(f"contour Area: {area}")
+```
+
+Result:
+```python
+# 185.5
+# 39192.5
+# 657.0
+# 111.0
+```
+
+*Note:* `contours` is a list contours. So in order to get the areas, we need to loop through the list.
+
+
+**Mental image**:
+
+| Shape | Area |
+| :--- | :--- |
+| **Tiny dot** | 20 |
+| **Coin** | 5,000 |
+| **Box** | 30,000 |
+
+
+**Why it matters**:
+* Remove noise
+* Ignore tiny junk
+* Focus on real objects
+
+```python
+if area < 500:
+    continue
+```
+
+Example:
+```python
+for cnt in contours:
+    area = cv.contourArea(cnt)
+    if area < 500:
+        continue
+    print(f"Keeping object with area: {area}")
+```
+
+Result:
+```python
+length: 34
+# Keeping object with area: 9086.5
+# Keeping object with area: 39192.5
+# Keeping object with area: 657.0
+# Keeping object with area: 42689.5
+# Keeping object with area: 618.5
+# Keeping object with area: 62139.0
+```
+
+## `cv2.boundingRect()`
+
+**What it does**:
+`boundingRect()` is the easiest way to put a "box" around an object.<br>
+It takes a contour (that complex list of points) and simplifies it into a simple, straight rectangle
+
+**Syntax**:
+```python
+x, y, w, h = cv2.boundingRect(contour)
+```
+
+**Mental image**:
+```python
+   +--------+
+   |  ◯     |
+   |        |
+   +--------+
+```
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/58a566ee-733f-4bab-ad04-d318c44b59ab" />
