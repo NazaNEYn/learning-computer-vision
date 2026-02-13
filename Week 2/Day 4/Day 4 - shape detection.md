@@ -211,7 +211,49 @@ Bounding box doesn’t care about shape — just size & position.<br>
 * Measure proportions
 
 
-### Example, Just draw a bounding box
+### Example
+
+* **Draw one contour/object**
+
+```python
+image_path = "/kaggle/input/datasets/nazaninashrafi/img-testt/2224564.jpg"
+image = cv.imread(image_path)
+image_rgb = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+
+gray = cv.cvtColor(image_rgb, cv.COLOR_BGR2GRAY)
+blur = cv.GaussianBlur(gray, (9,9), 0)
+
+_, binary = cv.threshold(blur, 127, 255, cv.THRESH_BINARY_INV)
+
+contours, _ = cv.findContours(
+    binary,
+    cv.RETR_EXTERNAL,
+    cv.CHAIN_APPROX_SIMPLE
+)
+
+output = image_rgb.copy()
+
+
+cnt = contours[5]  # take one object
+
+x, y, w, h = cv.boundingRect(cnt)
+print(x, y, w, h)
+
+cv.rectangle(output,
+             (x,y),
+             (x+w, y+h),
+             (0,255,0),
+             2
+            )
+
+plt.imshow(output)
+```
+
+<img width="617" height="309" alt="image" src="https://github.com/user-attachments/assets/d519f590-226b-49b0-8cb9-9324e1ce6c01" />
+
+<br>
+
+* **Draw a bounding box**
 
 ```python
 for cnt in contours:
@@ -270,3 +312,92 @@ plt.imshow(output)
 <img width="720" height="352" alt="image" src="https://github.com/user-attachments/assets/1d7d0053-ff76-4943-8095-4738800ef2f0" />
 
 
+## `arcLength()`
+
+**What it does**:
+Measures **how long the contour edge is.**<br>
+<br>
+Think of it as:
+Walking around the shape’s outline with a measuring tape.
+
+**Syntax**:
+```python
+perimeter = cv2.arcLength(contour, True)
+```
+`True` → shape is closed
+
+**What you get**:
+A single number (length in pixels)
+
+**Mental image**:
+
+| Shape | Perimeter |
+| :--- | :--- |
+| **Small square** | Short |
+| **Big circle** | Long |
+| **Star** | Very long |
+
+
+**Why it matters**:
+* Used to scale other operations
+* Makes algorithms size-independent
+
+### Example:
+```python
+for cnt in contours:
+    perimeter = cv.arcLength(cnt, True)
+    print(f"Object perimeter: {perimeter:.2f}")
+```
+
+
+## `approxPolyDP()`
+
+**What it does**:
+Simplifies a contour into fewer points.<br>
+<br>
+
+It turns:
+* hundreds of tiny points → a **clean polygon**
+
+**Syntax**:
+```python
+approx = cv2.approxPolyDP(
+    contour,
+    epsilon,
+    True
+)
+```
+Where:
+```python
+epsilon = 0.04 * perimeter
+```
+
+**What you get**:
+* A simplified contour
+* Fewer points
+* Each point ≈ **a corner**
+
+**Mental image**:
+
+| Shape | Points |
+| :--- | :--- |
+| **Triangle** | 3 |
+| **Rectangle** | 4 |
+| **Circle** | Many |
+
+**Why it matters**:
+* Count corners
+* Identify shapes
+* Reduce noise
+
+
+
+## How They Connect
+
+| Function | Role |
+| :--- | :--- |
+| **`findContours()`** | Find objects |
+| **`contourArea()`** | Filter objects |
+| **`arcLength()`** | Measure shape |
+| **`approxPolyDP()`** | Understand shape |
+| **`boundingRect()`** | Locate & draw |
