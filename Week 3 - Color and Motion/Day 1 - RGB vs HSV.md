@@ -154,3 +154,11 @@ You DO use HSV for:
 * tracking
 
 Different tools, different goals.
+
+## Converting RGB → HSV
+
+```python
+image = cv.imread(path)
+image_rgb = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+image_hsv = cv.cvtColor(image_rgb, cv.COLOR_RGB2HSV)
+```
