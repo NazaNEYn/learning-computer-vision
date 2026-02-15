@@ -58,3 +58,30 @@ This is why HSV is used for:
 * traffic lights
 * ball tracking
 * motion + color pipelines
+
+## What each HSV channel REALLY does
+
+### Hue (H)
+* Represents color type
+* Think: color wheel 
+* Values wrap around (red → yellow → green → blue → back to red)
+
+In OpenCV:
+* Hue range = **0–179** (not 0–360)
+
+### Saturation (S)
+
+* Color intensity
+* Low S → grayish
+* High S → vivid color
+
+If saturation = 0:<br>
+color disappears (becomes gray)
+
+### Value (V)
+
+* Brightness
+* Low V → dark
+* High V → bright
+
+This is where shadows and lighting mostly live.
