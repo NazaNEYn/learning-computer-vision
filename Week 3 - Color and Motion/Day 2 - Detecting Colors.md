@@ -124,3 +124,35 @@ upper_blue = np.array([140, 255, 255])
 * Hue: blue-ish
 * Saturation: ignore gray/white
 * Value: ignore dark pixels
+
+**Example: 🟢 Green**
+```python
+lower_green = np.array([40, 70, 70])
+upper_green = np.array([80, 255, 255])
+```
+
+**Example: 🔴 Red (special case)**<br>
+Red wraps around → **two ranges.**
+
+```python
+lower_red1 = np.array([0, 120, 70])
+upper_red1 = np.array([10, 255, 255])
+
+lower_red2 = np.array([170, 120, 70])
+upper_red2 = np.array([179, 255, 255])
+```
+
+### Step 5: Create a mask
+
+**Basic mask (single range)**
+
+```python
+mask = cv.inRange(hsv_image, lower_color, upper_color)
+```
+
+### Step 6 : Show the mask
+
+### Step 7: Apply the mask to the image
+
+### Step 8: Display final result
+
