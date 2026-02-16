@@ -86,9 +86,25 @@ color disappears (becomes gray)
 
 This is where shadows and lighting mostly live.
 
+## Hue
 
 ![Gemini_Generated_Image_ujgkwdujgkwdujgk](https://github.com/user-attachments/assets/dcf02871-4450-417b-ae21-908576e2d11f)
 
+### Hue color ranges
+
+**Approximate Hue Ranges**
+
+These are guidelines, NOT rules.
+
+| Color | Approx Hue Range (OpenCV) |
+| :--- | :--- |
+| **Red** | 0–10 and 170–179 |
+| **Orange** | 10–25 |
+| **Yellow** | 25–35 |
+| **Green** | 35–85 |
+| **Cyan** | 85–100 |
+| **Blue** | 100–140 |
+| **Purple / Magenta** | 140–170 |
 
 ## Why HSV solves a REAL problem you already saw
 
