@@ -86,6 +86,10 @@ color disappears (becomes gray)
 
 This is where shadows and lighting mostly live.
 
+
+![Gemini_Generated_Image_ujgkwdujgkwdujgk](https://github.com/user-attachments/assets/dcf02871-4450-417b-ae21-908576e2d11f)
+
+
 ## Why HSV solves a REAL problem you already saw
 
 Remember thresholding problems?
