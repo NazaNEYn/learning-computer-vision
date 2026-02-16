@@ -46,6 +46,9 @@ That’s why red is special
 * Low Hue (0–10)
 * AND high Hue (170–179)
 
+![Gemini_Generated_Image_ujgkwdujgkwdujgk](https://github.com/user-attachments/assets/3da5fdb1-7f00-41fc-a1ac-43e9cf5bb641)
+
+
 ## Converting an Image to HSV
 
 ### Step 1: Convert RGB:
