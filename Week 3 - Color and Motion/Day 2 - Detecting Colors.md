@@ -153,9 +153,89 @@ upper_red2 = np.array([179, 255, 255])
 mask = cv.inRange(hsv_image, lower_color, upper_color)
 ```
 
+* Input: HSV image
+* Output: binary image (mask)
+* White (255) = color detected
+* Black (0) = not detected
+
 ### Step 6 : Show the mask
+```python
+plt.imshow(mask_blue, cmap="gray")
+plt.title("Blue Mask")
+plt.axis("off")
+plt.show()
+```
+
+This is how you debug color detection.<br>
+If the mask looks wrong → HSV ranges are wrong, not your logic.
 
 ### Step 7: Apply the mask to the image
 
-### Step 8: Display final result
+**Syntax**
+```python
+cv.bitwise_and(src1, src2[, dst[, mask]])
+```
 
+| Argument | Meaning |
+| :--- | :--- |
+| **src1** | First input image |
+| **src2** | Second input image |
+| **mask** | Optional binary mask |
+
+
+```python
+result = cv.bitwise_and(image_rgb, image_rgb, mask=mask)
+```
+
+* What this does:<br>
+  Keeps only masked pixels
+  Everything else becomes black
+
+* Why TWO images? `(image_rgb, image_rgb)`<br>
+`bitwise_and` combines *two images* But in color detection, we are **not combining two different images**.<br>
+We want to keep pixels from THIS image where the mask is white.<br>
+So we pass the **same image twice**.
+```python
+image_rgb AND image_rgb = image_rgb
+```
+
+### Step 8: Display final result
+```python
+plt.imshow(result)
+plt.title("Detected Blue")
+plt.axis("off")
+plt.show()
+```
+
+### Minimal Full Template
+```python
+hsv = cv.cvtColor(image_rgb, cv.COLOR_RGB2HSV)
+
+lower_color = np.array([H_min, S_min, V_min])
+upper_color = np.array([H_max, S_max, V_max])
+
+mask = cv.inRange(hsv, lower_color, upper_color)
+
+result = cv.bitwise_and(image_rgb, image_rgb, mask=mask)
+```
+
+### Debug Template
+```python
+plt.imshow(mask, cmap="gray")
+plt.title("Mask")
+plt.axis("off")
+plt.show()
+```
+
+
+## Mental Model
+
+* Convert → separate color from light
+* Split → understand channels
+* Mask → turn color into logic
+* Apply → see result
+
+## One Rule to Remember
+
+Color range = what you want<br>
+Mask = where it exists
