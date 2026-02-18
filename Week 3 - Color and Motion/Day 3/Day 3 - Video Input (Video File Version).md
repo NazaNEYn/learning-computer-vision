@@ -1,4 +1,4 @@
-# Video Input (Video File Version)
+# How OpenCV Opens & Reads a Video
 
 ## Goal of today’s lesson
 
@@ -9,15 +9,23 @@
 
 ## What OpenCV sees when it opens a video
 
-OpenCV does **not** see a video as a video.<br>
+To humans:
+* A video = moving pictures + sound<br> 
 
-It sees:
-```
-Frame 1 → image
-Frame 2 → image
-Frame 3 → image
+To OpenCV:
+* ❌ Sound doesn’t exist
+* ❌ Motion doesn’t exist 
+* ✅ A video = a sequence of images stored in order
+
+So OpenCV treats a video like:
+```python
+image_0001.jpg
+image_0002.jpg
+image_0003.jpg
 ...
 ```
+But stored efficiently in one file.
+
 
 ## Opening a video file
 ```python
