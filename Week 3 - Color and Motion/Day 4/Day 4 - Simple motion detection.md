@@ -71,6 +71,31 @@ This computes:<br>
 
 The result is an image of motion intensity.
 
+
+## Why we store the previous frame
+
+Motion is about **change**, so we need memory.
+
+We store:
+```python
+previous_frame = current_frame
+```
+At the end of each loop.
+
+Without this:
+* You can’t detect motion
+* You only see static images
+
+## Why the first frame is special
+
+On the first frame:
+* There is no “previous frame”
+
+So we:
+* Process it
+* Store it
+* Skip motion detection
+
 ## What simple motion detection can do
 * Detect movement
 * Draw bounding boxes
@@ -83,8 +108,20 @@ The result is an image of motion intensity.
 * Understand intent
 * Handle camera movement
 
+This is **frame-difference motion**, not AI.
+
 ## Mental model
 * Motion = difference between frames
 * Big difference = real movement
 * Small difference = noise
-This is **frame-difference motion**, not AI.
+
+
+## Why static camera matters
+
+
+If the camera moves:
+* Entire frame changes
+* Everything becomes “motion”
+
+So this method assumes:
+* Camera is fixed
