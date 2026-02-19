@@ -119,15 +119,22 @@ Thresholding answers:<br>
 * Below threshold → ignore (black)
 * Above threshold → motion (white)
 
+* White = moving region
+* Black = no movement
+
+So thresholding turns motion intensity into a clear decision: moving vs not moving.
+
 ## Why contours are used
 
-After thresholding:
+After thresholding, you have:
+* A binary image
 * White blobs = moving areas
 
 Contours allow us to:
 * Group motion pixels
 * Measure motion size
 * Draw boxes around motion
+* Ignore tiny random movement
 
 ## Summary
 * **Grayscale** → motion depends on intensity, not color
