@@ -32,16 +32,50 @@ But stored efficiently in one file.
 cap = cv.VideoCapture("video.mp4")
 ```
 
+It:
+* Opens the file
+* Prepares a decoder
+* Sets an internal pointer to **frame 0**
+
+Think of it like opening a book:
+* You don’t read all pages at once
+* You open it and prepare to read page by page
+
+### Why we don’t load the whole video at once
+
+Videos can be:
+* Thousands of frames
+* Huge in memory
+* Too slow to load entirely
+
+So OpenCV:
+* Reads one frame at a time
+* Only when you ask for it
+
+This is why `read()` exists.
+
 ## Reading frames
 
 ```python
 ret, frame = cap.read()
 ```
+This line does **three things internally**:
 
-* `ret` → True / False
-* `frame` → the actual image (same format as `cv.imread`)
+**Step A: Decode next frame**<br>
+<br>
+OpenCV asks:<br>
+> “Is there another frame after the current one?”
 
 
+**Step B: Try to read it**:<br>
+
+* If yes → decode it into an image
+* If no → stop
+
+**Step C — Return results**:
+
+* `ret` → success or failure
+* `frame` → the image (if successful)
 
 ### What is `frame`?
 
@@ -49,12 +83,15 @@ ret, frame = cap.read()
 
 * Type: NumPy array
 * Shape: `(H, W, 3)`
+* Color format : BGR (not RGB)
 * Same as `cv.imread()`
 
 > A frame is just an image.
 
 ### What is `ret`?
 
+`ret` stands for **“return status”**.<br>
+<br>
 `ret` is a **boolean flag**.<br>
 > `ret` **tells you whether OpenCV successfully read a frame.**
 
@@ -66,14 +103,17 @@ If `ret == False`:
 * The file **failed to open**
 * The frame **couldn’t be decoded**
 
+
 ## The basic video loop
 ```python
 while True:
     ret, frame = cap.read()
-
     if not ret:
         break
 ```
+
+**Means**:<br>
+> “Give me frames until there are no more.”
 
 ## Treat each frame like an image
 Inside the loop:
@@ -87,6 +127,18 @@ From here, you can do anything you already know:
 * color masks
 * contours
 * drawing
+
+## Releasing the video
+```python
+cap.release()
+```
+
+This:
+* Closes the file
+* Frees memory
+* Releases decoder resources
+
+Always do this.
 
 ## Minimal example
 
