@@ -80,7 +80,7 @@ If the difference is big → motion happened.
 ## What “difference” really means
 OpenCV uses:
 ```python
-cv.absdiff(prev_frame, current_frame)
+cv.absdiff(current_frame, prev_frame)
 ```
 
 This computes:<br>
