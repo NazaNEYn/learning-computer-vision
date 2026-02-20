@@ -207,4 +207,64 @@ If the camera moves:
 So this method assumes:
 * Camera is fixed
 
+---
 
+## Example
+
+```python
+import cv2 as cv
+import numpy as np
+
+# Open video file
+cap = cv.VideoCapture("video.mp4")
+
+# Read first frame
+ret, frame = cap.read()
+if not ret:
+    print("Failed to read video")
+    exit()
+
+# Prepare first frame
+prev_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+prev_gray = cv.GaussianBlur(prev_gray, (15, 15), 0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Convert current frame to grayscale and blur
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    gray = cv.GaussianBlur(gray, (15, 15), 0)
+
+    # Compute difference
+    diff = cv.absdiff(prev_gray, gray)
+
+    # Threshold the difference
+    _, motion_mask = cv.threshold(diff, 30, 255, cv.THRESH_BINARY)
+
+    # Find contours (motion regions)
+    contours, _ = cv.findContours(
+        motion_mask,
+        cv.RETR_EXTERNAL,
+        cv.CHAIN_APPROX_SIMPLE
+    )
+
+    # Draw bounding boxes for significant motion
+    for cnt in contours:
+        if cv.contourArea(cnt) < 800:
+            continue
+
+        x, y, w, h = cv.boundingRect(cnt)
+        cv.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+    # converting to RGB for kaggle notebook
+    rgb_frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
+    plt.imshow(rgb_frame)
+    plt.axis("off")
+
+    # Update previous frame
+    prev_gray = gray
+
+cap.release()
+```
