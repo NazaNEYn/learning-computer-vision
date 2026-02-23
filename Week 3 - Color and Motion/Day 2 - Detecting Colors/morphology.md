@@ -149,3 +149,11 @@ Use CLOSE when:
 
 
 ![Gemini_Generated_Image_9sygse9sygse9syg](https://github.com/user-attachments/assets/eca45500-0756-4e03-b392-cddc7eda769d)
+
+<br>
+
+With `morph`:
+<img width="227" height="389" alt="image" src="https://github.com/user-attachments/assets/8d6a521b-94bf-4dfc-99a8-24ef502d036a" />
+Without `morph`:
+<img width="227" height="389" alt="image" src="https://github.com/user-attachments/assets/50e4177b-804c-44b0-a074-59310cc5d25d" />
+
