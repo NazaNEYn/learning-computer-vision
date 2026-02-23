@@ -72,3 +72,70 @@ Not “eyes” or “noses” explicitly — but **patterns** like:
 
 Think:<br>
 > “This region statistically looks like a face.”
+
+* Haar models are stored as `.xml` files.
+```
+haarcascade_frontalface_default.xml
+```
+
+## Loading a Haar face model
+This is the minimum correct way.
+```python
+face_cascade = cv.CascadeClassifier(
+    cv.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
+```
+
+**What’s happening here:**
+* `CascadeClassifier(...)` → creates a detector
+* `cv.data.haarcascades` → OpenCV’s built-in path
+* `"haarcascade_frontalface_default.xml"` → the model
+
+## VERY important check
+Always verify the model loaded correctly:
+```python
+if face_cascade.empty():
+    raise IOError("Failed to load Haar cascade")
+```
+If you skip this and something goes wrong later, debugging becomes painful.
+
+## Why grayscale is mandatory
+* Haar cascades **do not use color**.
+* They only care about **intensity patterns**.
+So you must convert to grayscale:
+```python
+gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+```
+
+If you don’t:
+* detection will fail
+* or behave unpredictably
+
+This is not optional.
+
+## What detection will look like (conceptually)
+
+Later, you’ll do something like:
+```python
+faces = face_cascade.detectMultiScale(gray)
+```
+
+And `faces` will be:
+```
+[
+  [x1, y1, w1, h1],
+  [x2, y2, w2, h2],
+  ...
+]
+```
+
+Each entry = one detected face.<br>
+No masks. No pixels. Just boxes.
+
+## Your mental model going forward
+
+Up to now:<br>
+> “Which pixels belong?”<br>
+
+From now on:<br>
+> “Which regions look like objects?”<br>
