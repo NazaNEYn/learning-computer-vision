@@ -46,6 +46,7 @@ kernel = np.ones((5, 5), np.uint8)
 
 ## Morphology operations
 
+
 ### OPEN — remove small noise
 
 ```python
@@ -54,10 +55,20 @@ clean = cv.morphologyEx(mask, cv.MORPH_OPEN, kernel)
 
 **OPEN = erosion → dilation**
 
-* **Erosion**: The "Shrinker"
-In plain English, Erosion erodes away the boundaries of foreground objects (usually the white pixels).
-* **Dilation**: The "Expander
-Dilation is the exact opposite. It adds pixels to the boundaries of objects in an image.
+**Erosion**: The "Shrinker"<br>
+Erosion shrinks the white areas
+
+* What erosion actually does
+
+A white pixel stays white only if:<br>
+all pixels under the kernel are also white<br>
+If *any* black pixel is nearby → the white pixel disappears.<br>
+
+What erosion is good at
+* removing tiny white dots (noise)
+* separating objects that touch
+* thinning shapes
+
 
 What it does:
 * removes tiny white dots
@@ -94,10 +105,19 @@ clean = cv.morphologyEx(mask, cv.MORPH_CLOSE, kernel)
 
 **CLOSE = dilation → erosion**
 
-* **Erosion**: The "Shrinker"
-In plain English, Erosion erodes away the boundaries of foreground objects (usually the white pixels).
-* **Dilation**: The "Expander
-Dilation is the exact opposite. It adds pixels to the boundaries of objects in an image.
+**Dilation**: The "Expander"<br>
+Dilation grows the white areas
+
+What dilation actually does<br>
+
+A black pixel turns white if:<br>
+any pixel under the kernel is white<br>
+So white regions grow into nearby black areas.<br>
+
+What dilation is good at
+* filling holes
+* connecting broken objects
+* making shapes thicker
 
 
 What it does:
@@ -126,3 +146,6 @@ Use CLOSE when:
 * objects look broken
 * bounding boxes jump around
 * shapes are incomplete
+
+
+![Gemini_Generated_Image_9sygse9sygse9syg](https://github.com/user-attachments/assets/eca45500-0756-4e03-b392-cddc7eda769d)
