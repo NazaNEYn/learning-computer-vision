@@ -54,3 +54,21 @@ Your job becomes:
 * preparing the input correctly
 * tuning parameters
 * interpreting results
+
+## What is a Haar Cascade?
+
+A **Haar Cascade** is:<br>
+> A pre-trained model that learned what faces *generally* look like<br>
+> by analyzing thousands of face and non-face images.
+
+You don’t train it.<br>
+You use it.
+
+## What the model has learned (conceptually)
+Not “eyes” or “noses” explicitly — but **patterns** like:
+* dark eye regions vs bright cheeks
+* vertical symmetry
+* contrast patterns common in faces
+
+Think:<br>
+> “This region statistically looks like a face.”
