@@ -5,44 +5,25 @@ CV_Roadmap/
       └── Day1/
 ```
 
-# Pre-qualities:
+---
 
-* [Notebook](https://dev.to/nazanin_ashrafi/getting-marimo-up-and-running-on-windows-with-uv-4982)
-  * Installing Marimo:
-   ```python
-    uv init
-    ```
-   ```python
-   uv add marimo
-   ```
-   ```python
-   uv run marimo edit my_notebook.py
-   ```
+## A few notes about kaggle notebook:
+I use kaggle notebook for my learning journey. So my codes are based on how kaggle works.<br>
 
-* Install `numpy`
-  ```python
-  uv pip install numpy
-  ```
+* Make sure to import `matplotlib.pyplot`
+```python
+import matplotlib.pyplot as plt
+```
 
-* Install `OpenCV`
+Beacsue you need it to show the result:
+```python
+plt.imshow(image_rgb)
+plt.axis("off")
+plt.show()
+```
 
-* Anaconda <br>
-  To see a list of all of your environments:
-  ```python
-  conda env list
-  ```
-
-  Create a new Conda environment:
-  ```python
-  conda create -n opencv python=3.10
-  ```
-
-  Activate the environment:
-  ```python
-  conda activate opencv
-  ```
-
-  Install OpenCV from conda-forge:
-  ```python
-  conda install -c conda-forge opencv
-  ```
+* `openCV` reads images in `BGR` but kaggle reads them in `RGB`.<br>
+So make sure you convert the images to `RGB`:
+```python
+image_rgb = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+```
