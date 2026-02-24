@@ -89,6 +89,21 @@ for (x, y, w, h) in faces:
     )
 ```
 
+This line uses Python unpacking:<br>
+`for (x, y, w, h) in faces:`<br>
+* faces is not a list of face objects.
+* It’s a list (actually a NumPy array) that looks like this:
+  
+  ```
+  [
+  [x1, y1, w1, h1],
+  [x2, y2, w2, h2],
+  [x3, y3, w3, h3]
+  ]
+  ```
+* It means:
+  > “For each item in `faces`, take the 4 values inside it and assign them to `x`, `y`, `w`, and `h`.”
+
 You are **not modifying detection** here.<br>
 you’re only visualizing the result.
 
