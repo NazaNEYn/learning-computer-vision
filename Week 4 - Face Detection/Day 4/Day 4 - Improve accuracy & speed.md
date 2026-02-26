@@ -18,7 +18,6 @@ faces = face_cascade.detectMultiScale(
 
 ---
 
-
 ## `scaleFactor` - “How carefully do I look at sizes?”
 
 OpenCV scans the image, then shrinks the image and scans again, then shrinks again and scans again, and so on.<br>
@@ -110,6 +109,10 @@ Since we cannot change the size of the **Key**, we must change the size of the *
 ---
 
 ## `minNeighbors` - “How sure do I need to be?”
+
+During detection, OpenCV finds many overlapping or very close rectangles.<br>
+Each rectangle is like a vote saying “this might be a face.”<br>
+If the number of overlapping rectangles is greater than or equal to `minNeighbors`, OpenCV accepts it as a face; otherwise, it rejects it.<br>
 
 **Problem it solves**<br>
 
