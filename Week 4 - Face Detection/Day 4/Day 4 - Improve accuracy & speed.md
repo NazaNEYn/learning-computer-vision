@@ -82,7 +82,7 @@ Think:
 8 → very strict, fewer detections
 ```
 
-![Gemini_Generated_Image_tusorztusorztuso](https://github.com/user-attachments/assets/75e41327-d07a-4f0d-9d89-4d0706be4c9b)
+![Gemini_Generated_Image_tusorztusorztuso](https://github.com/user-attachments/assets/32d3dd02-dbc1-46a4-9ecd-244d74f436f3)
 
 ## Resize frames to improve speed
 
