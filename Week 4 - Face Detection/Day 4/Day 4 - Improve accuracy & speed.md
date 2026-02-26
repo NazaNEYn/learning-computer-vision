@@ -99,3 +99,63 @@ Smaller image → much faster detection
 small_frame = cv.resize(frame, None, fx=0.5, fy=0.5)
 gray_small = cv.cvtColor(small_frame, cv.COLOR_BGR2GRAY)
 ```
+
+**Detect on the small image:**
+```python
+faces = face_cascade.detectMultiScale(
+    gray_small,
+    scaleFactor=1.1,
+    minNeighbors=5
+)
+```
+
+**Scale boxes back up**
+```python
+for (x, y, w, h) in faces:
+    x = int(x * 2)
+    y = int(y * 2)
+    w = int(w * 2)
+    h = int(h * 2)
+
+    cv.rectangle(frame, (x, y), (x+w, y+h), (0,255,0), 2)
+```
+This trick alone can make detection **2–4× faster**.
+
+
+## Full code snippet for vscode
+```python
+import cv2 as cv
+
+cap = cv.VideoCapture("video.mp4")
+
+face_cascade = cv.CascadeClassifier(
+    cv.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Resize for speed
+    small = cv.resize(frame, None, fx=0.5, fy=0.5)
+    gray = cv.cvtColor(small, cv.COLOR_BGR2GRAY)
+
+    faces = face_cascade.detectMultiScale(
+        gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(60, 60)
+    )
+
+    for (x, y, w, h) in faces:
+        x, y, w, h = x*2, y*2, w*2, h*2
+        cv.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), 2)
+
+    cv.imshow("Face Detection", frame)
+    if cv.waitKey(20) == 27:
+        break
+
+cap.release()
+cv.destroyAllWindows()
+```
