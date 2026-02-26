@@ -69,6 +69,20 @@ Imagine you’re looking for a face on a photo wall.
 | **1.3** | few big steps | fast jump, skips sizes in between | may miss faces, boxes less stable | faster |
 
 
+![Gemini_Generated_Image_w8wv93w8wv93w8wv](https://github.com/user-attachments/assets/5f21cb7b-194a-4885-8593-bd326b4a2630)
+
+
+## The Lock and Key analogy
+
+
+
+
+
+
+
+![Gemini_Generated_Image_mdof5wmdof5wmdof](https://github.com/user-attachments/assets/f85858e8-5041-4660-9b2f-634665dbf75a)
+
+
 **Rule of thumb**
 * Start with `1.1`
 * Increase if detection is slow
