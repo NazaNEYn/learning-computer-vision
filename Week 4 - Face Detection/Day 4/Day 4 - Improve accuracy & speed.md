@@ -16,7 +16,10 @@ faces = face_cascade.detectMultiScale(
 )
 ```
 
-### `scaleFactor` (how the image is scanned)
+### `scaleFactor` - “How carefully do I look at sizes?”
+
+OpenCV scans the image, then shrinks the image and scans again, then shrinks again and scans again, and so on.<br>
+
 
 **Problem it solves**<br>
 
@@ -42,14 +45,28 @@ Example:
 1.3 → coarse search → faster → less accurate
 ```
 
-**Think of it like zooming**
-
-* `scaleFactor` = 1.05 → slow, careful zoom
-* `scaleFactor` = 1.1 → normal zoom
-* `scaleFactor` = 1.3 → aggressive zoom
-
+**Think of it like zoom steps**<br>
+Imagine you’re looking for a face on a photo wall.
+* `1.1` → you zoom **very slowly**
+* `1.3` → you zoom **in big jumps**
 
 ![Gemini_Generated_Image_pwnsuvpwnsuvpwns](https://github.com/user-attachments/assets/1c708dd1-dce4-43b1-8d14-e458af659ec5)
+
+
+**What changes when the number increases?**
+
+| scaleFactor | What happens |
+| :--- | :--- |
+| 1.1 | many scans → slow → misses fewer faces |
+| 1.2 | fewer scans → faster |
+| 1.3 | very few scans → fast → misses small faces |
+
+
+
+| scaleFactor | Mechanism | Strategy | Detection Performance | Speed |
+| :--- | :--- | :--- | :--- | :--- |
+| **1.1** | many small steps | slow climb, careful scanning | catches more face sizes, more faces detected, more stable boxes | slower |
+| **1.3** | few big steps | fast jump, skips sizes in between | may miss faces, boxes less stable | faster |
 
 
 **Rule of thumb**
@@ -57,7 +74,7 @@ Example:
 * Increase if detection is slow
 * Decrease only if missing faces
 
-### `minNeighbors` (how strict the detector is)
+### `minNeighbors` - “How sure do I need to be?”
 
 **Problem it solves**<br>
 
