@@ -58,3 +58,44 @@ Example:
 * Decrease only if missing faces
 
 ### `minNeighbors` (how strict the detector is)
+
+**Problem it solves**<br>
+
+Sometimes the detector sees:
+* shadows
+* patterns
+* background textures
+
+and thinks they’re faces.
+
+**What `minNeighbors` means**<br>
+> How many overlapping detections are required to confirm a face.
+
+Think:
+* low value → “be optimistic”
+* high value → “be confident”
+
+**Typical values**
+```
+3 → many detections, many false positives
+5 → balanced (recommended)
+8 → very strict, fewer detections
+```
+
+![Gemini_Generated_Image_tusorztusorztuso](https://github.com/user-attachments/assets/75e41327-d07a-4f0d-9d89-4d0706be4c9b)
+
+## Resize frames to improve speed
+
+**Why this works**<br>
+
+Face detection cost grows with:
+* image width
+* image height
+
+Smaller image → much faster detection
+
+**Resize before detection**
+```python
+small_frame = cv.resize(frame, None, fx=0.5, fy=0.5)
+gray_small = cv.cvtColor(small_frame, cv.COLOR_BGR2GRAY)
+```
