@@ -10,12 +10,12 @@ CV_Roadmap/
 ## A few notes about kaggle notebook:
 I use kaggle notebook for my learning journey. So my codes are based on how kaggle works.<br>
 
-* Make sure to import `matplotlib.pyplot`
+Since we can't pop up a new window, we use `Matplotlib` to render the image directly inside the notebook cell.<br>
+* So make sure to import `matplotlib.pyplot`
 ```python
 import matplotlib.pyplot as plt
 ```
 
-Beacsue you need it to show the result:
 ```python
 plt.imshow(image_rgb)
 plt.axis("off")
