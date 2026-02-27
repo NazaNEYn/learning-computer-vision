@@ -68,6 +68,9 @@ If you use `fx` and `fy`, `dsize` must be `None`.
 | `cv.INTER_CUBIC` | Better quality when enlarging |
 | `cv.INTER_NEAREST` | Fast, blocky |
 
+![Gemini_Generated_Image_4k8afb4k8afb4k8a](https://github.com/user-attachments/assets/20b3cf96-c1c1-4768-b1bf-f6c5623981e8)
+
+
 
 ## Best practice for video speed
 ```python
