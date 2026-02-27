@@ -121,5 +121,67 @@ What can go wrong:
 * Wrong text
 * Debugging the wrong part
 
-## 3. Think in Data Flow
+## 4. Think in Data Flow
 Engineers think about how data changes as it moves.<br>
+
+Video frame<br>
+→ raw image<br>
+→ prepared image<br>
+→ detection boxes<br>
+→ face count<br>
+→ image with drawings<br>
+→ display<br>
+
+Each step changes the data for a reason.<br>
+If something breaks, you find **which step caused it**.
+
+## 5. Decide What “Correct” Means
+
+Correct does not mean perfect.<br>
+
+Correct means:
+* The system behaves as expected
+* Mistakes make sense
+
+Examples of acceptable mistakes:
+* Missing a face at a weird angle
+* Two boxes on one face
+* Face count changing slightly
+
+A good system fails in **predictable ways**.
+
+## 6. Design for Debugging
+
+Engineers design systems so they can see what’s happening.<br>
+
+Ask:
+* Can I see the raw frame?
+* Can I see the detection boxes?
+* Can I change settings and see results?
+
+That’s why:
+* Drawing boxes helps debugging
+* Showing face count checks logic
+
+## 7. Know What You’re Not Doing Yet
+
+A big skill is knowing what to skip.<br>
+
+You are **not**:
+* Tracking faces
+* Remembering faces
+* Smoothing counts
+* Using deep learning
+
+Those belong to different problems.<br>
+Skipping them keeps the system clean.
+
+## The Right Way to Think While Coding
+
+While you write code, your thoughts should be:
+* “Resizing changes coordinates”
+* “Some detection noise is normal”
+* “This failure makes sense”
+* “This part can be replaced later”
+
+If that’s how you’re thinking, you’re doing it right.
