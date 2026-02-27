@@ -179,6 +179,14 @@ for (x, y, w, h) in faces:
 ```
 This trick alone can make detection **2–4× faster**.
 
+![Gemini_Generated_Image_m3r6tdm3r6tdm3r6](https://github.com/user-attachments/assets/f5f7e711-3d22-47ac-a3dd-27441e2daeba)
+
+![Gemini_Generated_Image_ckjzkdckjzkdckjz](https://github.com/user-attachments/assets/e17a7398-9dd5-4d8a-82d6-8d27b0c5a204)
+
+
+**General rule**<br>
+If you detect on a resized image, you must scale the coordinates back before drawing on the original image.
+
 
 ## Full code snippet for vscode
 ```python
