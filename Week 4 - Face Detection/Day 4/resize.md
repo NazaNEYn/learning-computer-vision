@@ -41,6 +41,10 @@ Means:
 * width → 50%
 * height → 50%
 
+
+![Gemini_Generated_Image_m3r6tdm3r6tdm3r6](https://github.com/user-attachments/assets/b866e31b-be27-4cdb-b9ec-17cc861cb4e6)
+
+
 ### `dsize=None`
 You must choose **one method**:
 
