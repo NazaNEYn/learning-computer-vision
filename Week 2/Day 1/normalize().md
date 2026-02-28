@@ -76,6 +76,13 @@ cv.NORM_MINMAX
 Which means:<br>
 > “Map min → alpha, max → beta”
 
+
+### Minimal example
+```python
+gray = cv.imread("img.png", cv.IMREAD_GRAYSCALE)
+norm = cv.normalize(gray, None, 0, 255, cv.NORM_MINMAX)
+```
+
 -----------------------------------------------------------------------
 ![Gemini_Generated_Image_dwb5jzdwb5jzdwb5](https://github.com/user-attachments/assets/db15c121-f4af-4662-a80b-8d57a5dfbd98)
 ![Gemini_Generated_Image_gj4dafgj4dafgj4d](https://github.com/user-attachments/assets/40655825-9662-4193-8cdf-84b6e6a94010)
